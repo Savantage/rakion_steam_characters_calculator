@@ -40,43 +40,53 @@ def showWearables(gear_list, geardic, texttable):
 
 
 def sortBasic(gear_list, textable):
-    tabletoString(sorted(gear_list[0], key=lambda stat: stat[1]), TABLE_HEADERS, textable)
+    if gear_list[0]:
+        tabletoString(sorted(gear_list[0], key=lambda stat: stat[1]), TABLE_HEADERS, textable)
 
 
 def sortRange(gear_list, textable):
-    tabletoString(sorted(gear_list[0], key=lambda stat: stat[2]), TABLE_HEADERS, textable)
+    if gear_list[0]:
+        tabletoString(sorted(gear_list[0], key=lambda stat: stat[2]), TABLE_HEADERS, textable)
 
 
 def sortSpecial(gear_list, textable):
-    tabletoString(sorted(gear_list[0], key=lambda stat: stat[3]), TABLE_HEADERS, textable)
+    if gear_list[0]:
+        tabletoString(sorted(gear_list[0], key=lambda stat: stat[3]), TABLE_HEADERS, textable)
 
 
 def sortGrip(gear_list, textable):
-    tabletoString(sorted(gear_list[0], key=lambda stat: stat[4]), TABLE_HEADERS, textable)
+    if gear_list[0]:
+        tabletoString(sorted(gear_list[0], key=lambda stat: stat[4]), TABLE_HEADERS, textable)
 
 
 def sortCD(gear_list, textable):
-    tabletoString(sorted(gear_list[0], key=lambda stat: stat[5]), TABLE_HEADERS, textable)
+    if gear_list[0]:
+        tabletoString(sorted(gear_list[0], key=lambda stat: stat[5]), TABLE_HEADERS, textable)
 
 
 def sortHP(gear_list, textable):
-    tabletoString(sorted(gear_list[0], key=lambda stat: stat[6]), TABLE_HEADERS, textable)
+    if gear_list[0]:
+        tabletoString(sorted(gear_list[0], key=lambda stat: stat[6]), TABLE_HEADERS, textable)
 
 
 def sortAP(gear_list, textable):
-    tabletoString(sorted(gear_list[0], key=lambda stat: stat[7]), TABLE_HEADERS, textable)
+    if gear_list[0]:
+        tabletoString(sorted(gear_list[0], key=lambda stat: stat[7]), TABLE_HEADERS, textable)
 
 
 def sortAS(gear_list, textable):
-    tabletoString(sorted(gear_list[0], key=lambda stat: stat[8]), TABLE_HEADERS, textable)
+    if gear_list[0]:
+        tabletoString(sorted(gear_list[0], key=lambda stat: stat[8]), TABLE_HEADERS, textable)
 
 
 def sortMS(gear_list, textable):
-    tabletoString(sorted(gear_list[0], key=lambda stat: stat[9]), TABLE_HEADERS, textable)
+    if gear_list[0]:
+        tabletoString(sorted(gear_list[0], key=lambda stat: stat[9]), TABLE_HEADERS, textable)
 
 
 def sortCP(gear_list, textable):
-    tabletoString(sorted(gear_list[0], key=lambda stat: stat[10]), TABLE_HEADERS, textable)
+    if gear_list[0]:
+        tabletoString(sorted(gear_list[0], key=lambda stat: stat[10]), TABLE_HEADERS, textable)
 
 
 def showGear(gearwindow, geardic):
