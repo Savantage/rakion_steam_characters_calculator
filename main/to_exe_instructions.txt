@@ -1,0 +1,1 @@
+Pyinstaller --onefile --icon=hoe.ico --windowed source.py

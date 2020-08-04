@@ -1060,3 +1060,14 @@ main/.idea/main.iml
 main/.idea/inspectionProfiles/Project_Default.xml
 main/.idea/inspectionProfiles/profiles_settings.xml
 main/.idea/workspace.xml
+main/venv/Lib/site-packages/__pycache__/tabulate.cpython-38.pyc
+main/venv/Lib/site-packages/tabulate-0.8.7.dist-info/entry_points.txt
+main/venv/Lib/site-packages/tabulate-0.8.7.dist-info/INSTALLER
+main/venv/Lib/site-packages/tabulate-0.8.7.dist-info/LICENSE
+main/venv/Lib/site-packages/tabulate-0.8.7.dist-info/METADATA
+main/venv/Lib/site-packages/tabulate-0.8.7.dist-info/RECORD
+main/venv/Lib/site-packages/tabulate-0.8.7.dist-info/REQUESTED
+main/venv/Lib/site-packages/tabulate-0.8.7.dist-info/top_level.txt
+main/venv/Lib/site-packages/tabulate-0.8.7.dist-info/WHEEL
+main/venv/Lib/site-packages/tabulate.py
+main/venv/Scripts/tabulate.exe
