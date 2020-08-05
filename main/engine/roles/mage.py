@@ -1,4 +1,4 @@
-from engine.mage_stats import *
+from engine.roles.mage_stats import *
 from engine.wearable import Wearable
 
 # MAGE ROPA
