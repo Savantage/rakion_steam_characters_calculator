@@ -2389,3 +2389,4 @@ main/venv/Scripts/pyi-grab_version.exe
 main/venv/Scripts/pyi-makespec.exe
 main/venv/Scripts/pyi-set_version.exe
 main/venv/Scripts/pyinstaller.exe
+main/gui/__pycache__/displaycalculator.cpython-38.pyc
