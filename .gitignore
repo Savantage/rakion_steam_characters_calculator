@@ -2406,3 +2406,7 @@ main/engine/roles/__pycache__/ninja.cpython-38.pyc
 main/engine/roles/__pycache__/ninja_stats.cpython-38.pyc
 main/engine/roles/__pycache__/swordman.cpython-38.pyc
 main/engine/roles/__pycache__/swordman_stats.cpython-38.pyc
+main/engine/roles/__pycache__/archer.cpython-38.pyc
+main/engine/roles/__pycache__/archer_stats.cpython-38.pyc
+main/engine/roles/__pycache__/dualist.cpython-38.pyc
+main/engine/roles/__pycache__/dualist_stats.cpython-38.pyc
