@@ -27,34 +27,36 @@ archer_str = 'Archer level'
 
 def main():
     choose_window = Tk()
-    choose_window.geometry("740x130")
+    choose_window.geometry("320x30")
     choose_window.title(title_main)
 
-    blacksmith_png = PhotoImage(file="img/blacksmith.png")
-    swordman_png = PhotoImage(file="img/swordman.png")
-    mage_png = PhotoImage(file="img/mage.png")
-    archer_png = PhotoImage(file="img/archer.png")
-    ninja_png = PhotoImage(file="img/ninja.png")
-    dualist_png = PhotoImage(file="img/dualist.png")
+    '''
+    blacksmith_png = PhotoImage(file="../img/blacksmith.png")
+    swordman_png = PhotoImage(file="../img/swordman.png")
+    mage_png = PhotoImage(file="../img/mage.png")
+    archer_png = PhotoImage(file="../img/archer.png")
+    ninja_png = PhotoImage(file="../img/ninja.png")
+    dualist_png = PhotoImage(file="../img/dualist.png")
+    '''
 
-    Button(choose_window, image=blacksmith_png,
+    Button(choose_window, text='Blacksmith',
            command=lambda: displayCalculator(Blacksmith(), title_blacksmith, choose_window, blacksmith_str)).grid(row=0,
                                                                                                                   column=0)
 
-    Button(choose_window, image=swordman_png,
+    Button(choose_window, text='Swordman',
            command=lambda: displayCalculator(Swordman(), title_swordman, choose_window, swordman_str)).grid(row=0,
                                                                                                             column=1)
 
-    Button(choose_window, image=mage_png,
+    Button(choose_window, text='Mage',
            command=lambda: displayCalculator(Mage(), title_mage, choose_window, mage_str)).grid(row=0, column=2)
 
-    Button(choose_window, image=archer_png,
+    Button(choose_window, text='Archer',
            command=lambda: displayCalculator(Archer(), title_archer, choose_window, archer_str)).grid(row=0, column=3)
 
-    Button(choose_window, image=ninja_png,
+    Button(choose_window, text='Ninja',
            command=lambda: displayCalculator(Ninja(), title_ninja, choose_window, ninja_str)).grid(row=0, column=4)
 
-    Button(choose_window, image=dualist_png,
+    Button(choose_window, text='Dualist',
            command=lambda: displayCalculator(Dualist(), title_dualsit, choose_window, dualist_str)).grid(row=0,
                                                                                                          column=5)
 

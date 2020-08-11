@@ -74,7 +74,7 @@ archer_meleeS = {'Default': Wearable(),
                  'Warrior': Wearable("Warrior", 2, 11, 8, 5, 3, 3, 3, 1.02, 0.12, 150),
                  'Viking': Wearable("Viking", 3, 9, 7, 8, 2, 10, 10, 0.9, 0.09, 150),
                  'Zodiac': Wearable("Zodiac", 2, 9, 5, 3, 7, 1, 1, 0.73, 0.09, 400),
-                 'Summer': Wearable("Summer", 4, 3, 4, 4, 3, 11, 11, 0.89, 0.07, 1200),
+                 'Summer': Wearable("Summer", 2, 4, 2, 2, 4, 8, 8, 0.78, 0.06, 1100),
                  'Northsoul': Wearable("Northsoul", 2, 1, 2, 3, 3, 1, 2, 0.9, 0, 500),
                  'Pioneer Viking': Wearable("Pioneer Viking", 4, 14, 6, 6, 1, 10, 8, 1.35, 0.13, 200)
                  }
