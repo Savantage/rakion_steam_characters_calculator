@@ -8,7 +8,7 @@ def validPoints(actualPoints, pointsToAdd, availableStatPoints):
         return True
 
 
-class LevelStats:
+class Stats:
     def __init__(self, character):
         # character stat gained per level point
         self.basicPerPoint = character.basicPerPoint
@@ -24,6 +24,7 @@ class LevelStats:
         self.past50 = character.PAST50
         self.past80 = character.PAST80
 
+        self.bonusStats = 0
         self.availablestatPoints = 0
         self.level = 1
 
@@ -68,6 +69,25 @@ class LevelStats:
             totalAdded = gained * 50 + self.past50 * gained * pointspast50 + self.past80 * gained * pointspast80
 
         return totalAdded
+
+    # Elegir nivel
+    def setLevel(self, level):
+        self.statReset()
+        if 0 < level < 100:
+            self.level = level
+            self.availablestatPoints = (level * 3) - 3 + self.bonusStats
+
+    def activateBonusStats(self):
+        self.bonusStats = 200
+        self.availablestatPoints = self.availablestatPoints + self.bonusStats
+
+    def deactivateBonusStats(self):
+        self.statReset()
+        self.bonusStats = 0
+        self.setLevel(self.level)
+
+    def getAvailableStatPoints(self):
+        return self.availablestatPoints
 
     # Getters para cada stat
 
@@ -124,13 +144,6 @@ class LevelStats:
         self.attackSpeed = 0
         self.movementSpeed = 0
         self.cp = 0
-
-    # Elegir nivel
-    def setLevel(self, level):
-        self.statReset()
-        if 0 < level < 100:
-            self.level = level
-            self.availablestatPoints = (level * 3) - 3
 
     # 10 funciones para añadir los puntos de stat
     def addBasic(self, pointsToAdd):

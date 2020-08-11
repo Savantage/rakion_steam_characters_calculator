@@ -101,11 +101,7 @@ def update_stats(stat_labels, character):
     stat_labels[stat_names['Cell points']].config(text=str(character.getCellPoints()))
 
 
-def setCharacterLevel(character, level_input, actual_level, actual_available_stats, levelstats, stat_points,
-                      stat_labels):
-    character.setLevel(int(level_input.get()))
-    actual_level.config(text=str(character.getLevel()))
-    actual_available_stats.config(text=str(character.getAvailableStats()))
+def updateStatpoints(stat_points, levelstats):
     stat_points[stat_names['Basic']].config(text=str(levelstats.basicPoints))
     stat_points[stat_names['Range']].config(text=str(levelstats.rangePoints))
     stat_points[stat_names['Special']].config(text=str(levelstats.specialPoints))
@@ -116,6 +112,17 @@ def setCharacterLevel(character, level_input, actual_level, actual_available_sta
     stat_points[stat_names['Attack speed']].config(text=str(levelstats.attackSpeedPoints))
     stat_points[stat_names['Movement Speed']].config(text=str(levelstats.movementSpeedPoints))
     stat_points[stat_names['Cell points']].config(text=str(levelstats.cpPoints))
+
+
+def setCharacterLevel(character, level_input, actual_level, actual_available_stats, levelstats, stat_points,
+                      stat_labels):
+    try:
+        character.setLevel(int(level_input.get()))
+    except ValueError:
+        pass
+    actual_level.config(text=str(character.getLevel()))
+    actual_available_stats.config(text=str(character.getAvailableStats()))
+    updateStatpoints(stat_points, levelstats)
     update_stats(stat_labels, character)
     level_input.delete(0, "end")
 
@@ -242,7 +249,10 @@ def enchant_bead(enchanter, enchantingstringvars, statlabels, character):
 
 
 def addBasic(character, input_vars, stat_points, levelstats, actual_available_stats, stat_labels):
-    character.addBasic(int(input_vars[stat_names['Basic']].get()))
+    try:
+        character.addBasic(int(input_vars[stat_names['Basic']].get()))
+    except ValueError:
+        pass
     stat_points[stat_names['Basic']].config(text=str(levelstats.basicPoints))
     actual_available_stats.config(text=str(character.getAvailableStats()))
     update_stats(stat_labels, character)
@@ -250,7 +260,10 @@ def addBasic(character, input_vars, stat_points, levelstats, actual_available_st
 
 
 def addRange(character, input_vars, stat_points, levelstats, actual_available_stats, stat_labels):
-    character.addRange(int(input_vars[stat_names['Range']].get()))
+    try:
+        character.addRange(int(input_vars[stat_names['Range']].get()))
+    except ValueError:
+        pass
     stat_points[stat_names['Range']].config(text=str(levelstats.rangePoints))
     actual_available_stats.config(text=str(character.getAvailableStats()))
     update_stats(stat_labels, character)
@@ -258,7 +271,10 @@ def addRange(character, input_vars, stat_points, levelstats, actual_available_st
 
 
 def addSpecial(character, input_vars, stat_points, levelstats, actual_available_stats, stat_labels):
-    character.addSpecial(int(input_vars[stat_names['Special']].get()))
+    try:
+        character.addSpecial(int(input_vars[stat_names['Special']].get()))
+    except ValueError:
+        pass
     stat_points[stat_names['Special']].config(text=str(levelstats.specialPoints))
     actual_available_stats.config(text=str(character.getAvailableStats()))
     update_stats(stat_labels, character)
@@ -266,7 +282,10 @@ def addSpecial(character, input_vars, stat_points, levelstats, actual_available_
 
 
 def addGrip(character, input_vars, stat_points, levelstats, actual_available_stats, stat_labels):
-    character.addGrip(int(input_vars[stat_names['Grip']].get()))
+    try:
+        character.addGrip(int(input_vars[stat_names['Grip']].get()))
+    except ValueError:
+        pass
     stat_points[stat_names['Grip']].config(text=str(levelstats.gripPoints))
     actual_available_stats.config(text=str(character.getAvailableStats()))
     update_stats(stat_labels, character)
@@ -274,7 +293,10 @@ def addGrip(character, input_vars, stat_points, levelstats, actual_available_sta
 
 
 def addCd(character, input_vars, stat_points, levelstats, actual_available_stats, stat_labels):
-    character.addCellDestruction(int(input_vars[stat_names['Cell dest.']].get()))
+    try:
+        character.addCellDestruction(int(input_vars[stat_names['Cell dest.']].get()))
+    except ValueError:
+        pass
     stat_points[stat_names['Cell dest.']].config(text=str(levelstats.cdPoints))
     actual_available_stats.config(text=str(character.getAvailableStats()))
     update_stats(stat_labels, character)
@@ -282,7 +304,10 @@ def addCd(character, input_vars, stat_points, levelstats, actual_available_stats
 
 
 def addHp(character, input_vars, stat_points, levelstats, actual_available_stats, stat_labels):
-    character.addEnergy(int(input_vars[stat_names['Energy']].get()))
+    try:
+        character.addEnergy(int(input_vars[stat_names['Energy']].get()))
+    except ValueError:
+        pass
     stat_points[stat_names['Energy']].config(text=str(levelstats.hpPoints))
     actual_available_stats.config(text=str(character.getAvailableStats()))
     update_stats(stat_labels, character)
@@ -290,7 +315,10 @@ def addHp(character, input_vars, stat_points, levelstats, actual_available_stats
 
 
 def addAp(character, input_vars, stat_points, levelstats, actual_available_stats, stat_labels):
-    character.addArmor(int(input_vars[stat_names['Armor']].get()))
+    try:
+        character.addArmor(int(input_vars[stat_names['Armor']].get()))
+    except ValueError:
+        pass
     stat_points[stat_names['Armor']].config(text=str(levelstats.apPoints))
     actual_available_stats.config(text=str(character.getAvailableStats()))
     update_stats(stat_labels, character)
@@ -298,7 +326,10 @@ def addAp(character, input_vars, stat_points, levelstats, actual_available_stats
 
 
 def addAttackSpeed(character, input_vars, stat_points, levelstats, actual_available_stats, stat_labels):
-    character.addAttackSpeed(int(input_vars[stat_names['Attack speed']].get()))
+    try:
+        character.addAttackSpeed(int(input_vars[stat_names['Attack speed']].get()))
+    except ValueError:
+        pass
     stat_points[stat_names['Attack speed']].config(text=str(levelstats.attackSpeedPoints))
     actual_available_stats.config(text=str(character.getAvailableStats()))
     update_stats(stat_labels, character)
@@ -306,7 +337,10 @@ def addAttackSpeed(character, input_vars, stat_points, levelstats, actual_availa
 
 
 def addMovSpeed(character, input_vars, stat_points, levelstats, actual_available_stats, stat_labels):
-    character.addMovementSpeed(int(input_vars[stat_names['Movement Speed']].get()))
+    try:
+        character.addMovementSpeed(int(input_vars[stat_names['Movement Speed']].get()))
+    except ValueError:
+        pass
     stat_points[stat_names['Movement Speed']].config(text=str(levelstats.movementSpeedPoints))
     actual_available_stats.config(text=str(character.getAvailableStats()))
     update_stats(stat_labels, character)
@@ -314,7 +348,10 @@ def addMovSpeed(character, input_vars, stat_points, levelstats, actual_available
 
 
 def addCp(character, input_vars, stat_points, levelstats, actual_available_stats, stat_labels):
-    character.addCellPoints(int(input_vars[stat_names['Cell points']].get()))
+    try:
+        character.addCellPoints(int(input_vars[stat_names['Cell points']].get()))
+    except ValueError:
+        pass
     stat_points[stat_names['Cell points']].config(text=str(levelstats.cpPoints))
     actual_available_stats.config(text=str(character.getAvailableStats()))
     update_stats(stat_labels, character)
@@ -329,6 +366,16 @@ def advanceRole(advancedRoleOption, character, stat_labels):
     update_stats(stat_labels, character)
 
 
+def bonusStats(stats, option, label, character, stat_labels, stat_points):
+    if option.get() == 1:
+        stats.activateBonusStats()
+    else:
+        stats.deactivateBonusStats()
+    label.config(text=str(character.getAvailableStats()))
+    update_stats(stat_labels, character)
+    updateStatpoints(stat_points, character.stats)
+
+
 def openFacebook():
     webbrowser.open("https://www.facebook.com/Anzuilu/")
 
@@ -341,7 +388,7 @@ def openSteam():
     webbrowser.open("https://steamcommunity.com/id/iLuAnzu")
 
 
-def displayCalculator(role, tittle, window):
+def displayCalculator(role, tittle, window, character_level_str):
     window.withdraw()
 
     calculatorwindow = Toplevel()
@@ -353,7 +400,7 @@ def displayCalculator(role, tittle, window):
 
     character = Character(role)
     enchanter = character.enchanter
-    levelstats = character.levelStats
+    stats = character.stats
 
     role_helmets = list(character.role.helmetS)
     role_shoulders = list(character.role.shoulderS)
@@ -396,17 +443,17 @@ def displayCalculator(role, tittle, window):
                   stat_names['Cell points']: setEntryandPos(calculatorwindow, 11, 3)
                   }
 
-    stat_points = {stat_names['Basic']: setintLabelandPos(calculatorwindow, levelstats.basicPoints, 2, 5),
-                   stat_names['Range']: setintLabelandPos(calculatorwindow, levelstats.rangePoints, 3, 5),
-                   stat_names['Special']: setintLabelandPos(calculatorwindow, levelstats.specialPoints, 4, 5),
-                   stat_names['Grip']: setintLabelandPos(calculatorwindow, levelstats.gripPoints, 5, 5),
-                   stat_names['Cell dest.']: setintLabelandPos(calculatorwindow, levelstats.cdPoints, 6, 5),
-                   stat_names['Energy']: setintLabelandPos(calculatorwindow, levelstats.hpPoints, 7, 5),
-                   stat_names['Armor']: setintLabelandPos(calculatorwindow, levelstats.apPoints, 8, 5),
-                   stat_names['Attack speed']: setintLabelandPos(calculatorwindow, levelstats.attackSpeedPoints, 9, 5),
-                   stat_names['Movement Speed']: setintLabelandPos(calculatorwindow, levelstats.movementSpeedPoints, 10,
+    stat_points = {stat_names['Basic']: setintLabelandPos(calculatorwindow, stats.basicPoints, 2, 5),
+                   stat_names['Range']: setintLabelandPos(calculatorwindow, stats.rangePoints, 3, 5),
+                   stat_names['Special']: setintLabelandPos(calculatorwindow, stats.specialPoints, 4, 5),
+                   stat_names['Grip']: setintLabelandPos(calculatorwindow, stats.gripPoints, 5, 5),
+                   stat_names['Cell dest.']: setintLabelandPos(calculatorwindow, stats.cdPoints, 6, 5),
+                   stat_names['Energy']: setintLabelandPos(calculatorwindow, stats.hpPoints, 7, 5),
+                   stat_names['Armor']: setintLabelandPos(calculatorwindow, stats.apPoints, 8, 5),
+                   stat_names['Attack speed']: setintLabelandPos(calculatorwindow, stats.attackSpeedPoints, 9, 5),
+                   stat_names['Movement Speed']: setintLabelandPos(calculatorwindow, stats.movementSpeedPoints, 10,
                                                                    5),
-                   stat_names['Cell points']: setintLabelandPos(calculatorwindow, levelstats.cpPoints, 11, 5)}
+                   stat_names['Cell points']: setintLabelandPos(calculatorwindow, stats.cpPoints, 11, 5)}
 
     option_menu_vars = {
         wearable_names['Helmet']: optionMenuOptionsPosVar(calculatorwindow,
@@ -583,7 +630,8 @@ def displayCalculator(role, tittle, window):
                                                                                            enchanting_string_vars,
                                                                                            stat_labels, character))
 
-    level_string = Label(calculatorwindow, text="Mage Level", font="Helvetica 16 bold", fg="dark green", bg='gray58')
+    level_string = Label(calculatorwindow, text=character_level_str, font="Helvetica 16 bold", fg="dark green",
+                         bg='gray58')
     level_string.grid(row=0, column=6)
 
     actual_level = Label(calculatorwindow, text=str(character.getLevel()), font="Helvetica 14 bold", fg="dark green",
@@ -605,39 +653,39 @@ def displayCalculator(role, tittle, window):
 
     change_level = Button(calculatorwindow, text="Change level",
                           command=lambda: setCharacterLevel(character, level_input, actual_level,
-                                                            actual_available_stats, levelstats, stat_points,
+                                                            actual_available_stats, stats, stat_points,
                                                             stat_labels), bg='gray58')
     change_level.grid(row=1, column=7)
 
     Button(calculatorwindow, text="Basic +",
-           command=lambda: addBasic(character, input_vars, stat_points, levelstats, actual_available_stats,
+           command=lambda: addBasic(character, input_vars, stat_points, stats, actual_available_stats,
                                     stat_labels), width=15, bg='gray58', fg='black').grid(row=2, column=4)
     Button(calculatorwindow, text="Range +",
-           command=lambda: addRange(character, input_vars, stat_points, levelstats, actual_available_stats,
+           command=lambda: addRange(character, input_vars, stat_points, stats, actual_available_stats,
                                     stat_labels), width=15, bg='gray58', fg='black').grid(row=3, column=4)
     Button(calculatorwindow, text="Special +",
-           command=lambda: addSpecial(character, input_vars, stat_points, levelstats, actual_available_stats,
+           command=lambda: addSpecial(character, input_vars, stat_points, stats, actual_available_stats,
                                       stat_labels), width=15, bg='gray58', fg='black').grid(row=4, column=4)
     Button(calculatorwindow, text="Grip +",
-           command=lambda: addGrip(character, input_vars, stat_points, levelstats, actual_available_stats,
+           command=lambda: addGrip(character, input_vars, stat_points, stats, actual_available_stats,
                                    stat_labels), width=15, bg='gray58', fg='black').grid(row=5, column=4)
     Button(calculatorwindow, text="Cell dest. +",
-           command=lambda: addCd(character, input_vars, stat_points, levelstats, actual_available_stats, stat_labels),
+           command=lambda: addCd(character, input_vars, stat_points, stats, actual_available_stats, stat_labels),
            width=15, bg='gray58', fg='black').grid(row=6, column=4)
     Button(calculatorwindow, text="Energy +",
-           command=lambda: addHp(character, input_vars, stat_points, levelstats, actual_available_stats, stat_labels),
+           command=lambda: addHp(character, input_vars, stat_points, stats, actual_available_stats, stat_labels),
            width=15, bg='gray58', fg='black').grid(row=7, column=4)
     Button(calculatorwindow, text="Armor +",
-           command=lambda: addAp(character, input_vars, stat_points, levelstats, actual_available_stats, stat_labels),
+           command=lambda: addAp(character, input_vars, stat_points, stats, actual_available_stats, stat_labels),
            width=15, bg='gray58', fg='black').grid(row=8, column=4)
     Button(calculatorwindow, text="Attack speed +",
-           command=lambda: addAttackSpeed(character, input_vars, stat_points, levelstats, actual_available_stats,
+           command=lambda: addAttackSpeed(character, input_vars, stat_points, stats, actual_available_stats,
                                           stat_labels), width=15, bg='gray58', fg='black').grid(row=9, column=4)
     Button(calculatorwindow, text="Movement speed +",
-           command=lambda: addMovSpeed(character, input_vars, stat_points, levelstats, actual_available_stats,
+           command=lambda: addMovSpeed(character, input_vars, stat_points, stats, actual_available_stats,
                                        stat_labels), width=15, bg='gray58', fg='black').grid(row=10, column=4)
     Button(calculatorwindow, text="Cell points +",
-           command=lambda: addCp(character, input_vars, stat_points, levelstats, actual_available_stats,
+           command=lambda: addCp(character, input_vars, stat_points, stats, actual_available_stats,
                                  stat_labels),
            width=15, bg='gray58', fg='black').grid(row=11, column=4)
 
@@ -658,10 +706,15 @@ def displayCalculator(role, tittle, window):
     sorted_gear_button.grid(row=1, column=0)
 
     advancedRoleOption = IntVar()
+    Checkbutton(calculatorwindow, text="Advanced class", variable=advancedRoleOption,
+                command=lambda: advanceRole(advancedRoleOption, character, stat_labels),
+                bg='gray58').grid(row=12, column=6)
 
-    advancedCharacter = Checkbutton(calculatorwindow, text="Advanced class", variable=advancedRoleOption,
-                                    command=lambda: advanceRole(advancedRoleOption, character, stat_labels),
-                                    bg='gray58').grid(row=12, column=6)
+    bonusStatOption = IntVar()
+    Checkbutton(calculatorwindow, text="Bonus stat", variable=bonusStatOption,
+                command=lambda: bonusStats(stats, bonusStatOption, actual_available_stats, character, stat_labels,
+                                           stat_points),
+                bg='gray58').grid(row=0, column=3)
 
     Button(calculatorwindow, text="Facebook", command=openFacebook, width=8, height=1, fg="white", bg="royalblue",
            font="Helvetica 11 bold").grid(row=13, column=3)

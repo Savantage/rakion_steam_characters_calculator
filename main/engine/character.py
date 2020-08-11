@@ -2,7 +2,7 @@ from copy import deepcopy
 
 from engine.enchanter import Enchanter
 from engine.gear import Gear
-from engine.levelstats import LevelStats
+from engine.stats import Stats
 from engine.jewelry import *
 
 
@@ -11,7 +11,7 @@ class Character:
     def __init__(self, role):
         self.role = role
         self.gear = Gear()
-        self.levelStats = LevelStats(role)
+        self.stats = Stats(role)
         self.enchanter = Enchanter(self.gear)
 
     def setHelmet(self, helmetName):
@@ -71,76 +71,76 @@ class Character:
 
     # SET LEVEL
     def setLevel(self, level):
-        self.levelStats.setLevel(level)
+        self.stats.setLevel(level)
 
     # Añadir stats al personaje
     def addBasic(self, points):
-        self.levelStats.addBasic(points)
+        self.stats.addBasic(points)
 
     def addRange(self, points):
-        self.levelStats.addRange(points)
+        self.stats.addRange(points)
 
     def addSpecial(self, points):
-        self.levelStats.addSpecial(points)
+        self.stats.addSpecial(points)
 
     def addGrip(self, points):
-        self.levelStats.addGrip(points)
+        self.stats.addGrip(points)
 
     def addCellDestruction(self, points):
-        self.levelStats.addCellDestruction(points)
+        self.stats.addCellDestruction(points)
 
     def addCellPoints(self, points):
-        self.levelStats.addCellPoints(points)
+        self.stats.addCellPoints(points)
 
     def addAttackSpeed(self, points):
-        self.levelStats.addAttackSpeed(points)
+        self.stats.addAttackSpeed(points)
 
     def addMovementSpeed(self, points):
-        self.levelStats.addMovementSpeed(points)
+        self.stats.addMovementSpeed(points)
 
     def addEnergy(self, points):
-        self.levelStats.addHealthPoints(points)
+        self.stats.addHealthPoints(points)
 
     def addArmor(self, points):
-        self.levelStats.addArmorPoints(points)
+        self.stats.addArmorPoints(points)
 
     # Getters stats individuales
     def getBasic(self):
-        return self.role.basic + self.gear.getBasic() + self.levelStats.getBasic()
+        return self.role.basic + self.gear.getBasic() + self.stats.getBasic()
 
     def getRange(self):
-        return self.role.range + self.gear.getRange() + self.levelStats.getRange()
+        return self.role.range + self.gear.getRange() + self.stats.getRange()
 
     def getSpecial(self):
-        return self.role.special + self.gear.getSpecial() + self.levelStats.getSpecial()
+        return self.role.special + self.gear.getSpecial() + self.stats.getSpecial()
 
     def getGrip(self):
-        return self.role.grip + self.gear.getGrip() + self.levelStats.getGrip()
+        return self.role.grip + self.gear.getGrip() + self.stats.getGrip()
 
     def getCellDestruction(self):
-        return self.role.cd + self.gear.getCellDestruction() + self.levelStats.getCellDestruction()
+        return self.role.cd + self.gear.getCellDestruction() + self.stats.getCellDestruction()
 
     def getCellPoints(self):
-        return self.role.cp + self.gear.getCellPoints() + self.levelStats.getCellPoints()
+        return self.role.cp + self.gear.getCellPoints() + self.stats.getCellPoints()
 
     def getAttackSpeed(self):
-        return self.role.attackSpeed + self.gear.getAttackSpeed() + self.levelStats.getAttackSpeed()
+        return self.role.attackSpeed + self.gear.getAttackSpeed() + self.stats.getAttackSpeed()
 
     def getMovementSpeed(self):
-        return self.role.movementSpeed + self.gear.getMovementSpeed() + self.levelStats.getMovementSpeed()
+        return self.role.movementSpeed + self.gear.getMovementSpeed() + self.stats.getMovementSpeed()
 
     def getEnergy(self):
-        return self.role.hp + self.gear.getEnergy() + self.levelStats.getEnergy()
+        return self.role.hp + self.gear.getEnergy() + self.stats.getEnergy()
 
     def getArmor(self):
-        return self.role.ap + self.gear.getArmor() + self.levelStats.getArmor()
+        return self.role.ap + self.gear.getArmor() + self.stats.getArmor()
 
     # Stats
     def getLevel(self):
-        return self.levelStats.level
+        return self.stats.level
 
     def getAvailableStats(self):
-        return self.levelStats.availablestatPoints
+        return self.stats.getAvailableStatPoints()
 
     # Funcion testeo
     def mostrarStats(self):

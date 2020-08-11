@@ -1,1 +1,1 @@
-Pyinstaller --onefile --icon=hoe.ico --windowed source.py
+Pyinstaller --onefile --icon=dogo.ico --windowed source.py

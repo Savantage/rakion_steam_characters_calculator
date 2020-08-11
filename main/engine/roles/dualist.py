@@ -101,6 +101,7 @@ class Dualist:
         self.meleeS = dualist_meleeS
         self.rangeS = dualist_rangeS
 
+    # Dualist can't create advanced class stages
     def advancedClass(self):
         self.basic = BASIC_DUALIST + 0
         self.range = RANGE_DUALIST + 0
